@@ -8,7 +8,7 @@ app = Flask(__name__)
 # Load model & tokenizer
 MODEL_PATH = "../saved_model"
 tokenizer = BertTokenizer.from_pretrained(MODEL_PATH)
-model = TFBertForSequenceClassification.from_pretrained(MODEL_PATH)
+model = TFBertForSequenceClassification.from_pretrained(MODEL_PATH,from_pt=True)
 
 def predict_fake_news(text: str):
     inputs = tokenizer(
